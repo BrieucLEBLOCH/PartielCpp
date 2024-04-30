@@ -1,0 +1,22 @@
+{
+	"FileVersion": 3,
+	"EngineAssociation": "{C4C0D805-4A60-ED14-627D-DC8DBF04743B}",
+	"Category": "",
+	"Description": "",
+	"Modules": [
+		{
+			"Name": "Partielcppoof",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	],
+	"Plugins": [
+		{
+			"Name": "ModelingToolsEditorMode",
+			"Enabled": true,
+			"TargetAllowList": [
+				"Editor"
+			]
+		}
+	]
+}
