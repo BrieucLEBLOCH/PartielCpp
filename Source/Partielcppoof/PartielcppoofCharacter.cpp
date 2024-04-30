@@ -10,6 +10,8 @@
 #include "EnhancedInputSubsystems.h"
 #include "InputActionValue.h"
 #include "Engine/LocalPlayer.h"
+#include "../PartielcppoofGameMode.h"
+#include "Kismet/GameplayStatics.h"
 
 DEFINE_LOG_CATEGORY(LogTemplateCharacter);
 
@@ -54,7 +56,9 @@ void APartielcppoofCharacter::BeginPlay()
 			Subsystem->AddMappingContext(DefaultMappingContext, 0);
 		}
 	}
+	RunGameMode = Cast<APartielcppoofGameMode>(UGameplayStatics::GetGameMode(GetWorld()));
 
+	check(RunGameMode);
 }
 
 //////////////////////////////////////////////////////////////////////////// Input
@@ -115,4 +119,12 @@ void APartielcppoofCharacter::SetHasRifle(bool bNewHasRifle)
 bool APartielcppoofCharacter::GetHasRifle()
 {
 	return bHasRifle;
+}
+
+void APartielcppoofCharacter::AddCoin()
+{
+	if (IsValid(RunGameMode))
+	{
+		RunGameMode->AddCoin();
+	}
 }

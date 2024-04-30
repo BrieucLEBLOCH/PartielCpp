@@ -12,3 +12,12 @@ APartielcppoofGameMode::APartielcppoofGameMode()
 	DefaultPawnClass = PlayerPawnClassFinder.Class;
 
 }
+
+void APartielcppoofGameMode::AddCoin()
+{
+	TotalCoins += 10;
+	if (TotalCoins >= 50)
+	{
+		Win();
+	}
+}

@@ -13,6 +13,15 @@ class APartielcppoofGameMode : public AGameModeBase
 
 public:
 	APartielcppoofGameMode();
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Runtime)
+	int32 TotalCoins = 0;
+
+	UFUNCTION(BlueprintCallable)
+	void AddCoin();
+
+	UFUNCTION(BlueprintImplementableEvent, Category = Event)
+	void Win();
 };
 
 
